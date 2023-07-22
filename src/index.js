@@ -3,7 +3,7 @@ import {Avatar, Button, Timeline} from 'antd';
 import {createRoot} from "react-dom";
 import image from './avatar.jpg'
 import EA from './ealogo.svg'
-import TX from './Tencent_Logo.svg'
+import TX from './tencentlogo.svg'
 import TArch from './tencentarch.svg'
 import NEU from './neulogo.svg'
 import UCR from './ucrlogo.svg'
