@@ -1,20 +1,18 @@
 import React from 'react';
-import {Avatar, Button, Timeline} from 'antd';
+import {Avatar, Button, Timeline, Image} from 'antd';
 import {createRoot} from "react-dom";
-import image from './avatar.jpg'
+import avatar from './avatar.jpg'
 import EA from './ealogo.svg'
-import TX from './tencentlogo.svg'
 import TArch from './tencentarch.svg'
-import NEU from './neulogo.svg'
-import UCR from './ucrlogo.svg'
 import XD from './xdlogo.svg'
-import {LinkedinOutlined} from "@ant-design/icons";
+import Flink from './flink.svg'
+import {GithubOutlined, LinkedinOutlined} from "@ant-design/icons";
 
 const App = () => {
   return (
     <>
       <div style={{display: "flex", justifyContent: "center", marginTop: '30px'}}>
-        <Avatar src={image}
+        <Avatar src={avatar}
                 size={{
                   xs: 24,
                   sm: 32,
@@ -33,9 +31,18 @@ const App = () => {
                 href={"https://www.linkedin.com/in/yz726/"}
                 size={"large"}
                 icon={<LinkedinOutlined style={{fontSize: '32px'}}/>}/>
+        <Button style={{
+          border: "none",
+          marginLeft: '20px',
+          marginTop: 'auto',
+          marginBottom: "auto",
+        }}
+                href={"https://github.com/yaming-github"}
+                size={"large"}
+                icon={<GithubOutlined style={{fontSize: '30px'}}/>}/>
       </div>
       <h1 style={{textAlign: "center", marginTop: '30px'}}>
-        &#128075; Hello, I am Yaming, a Full Stack SWE &#x1F468;&#x200D;&#x1F4BB; &#128293; &#128293;
+        &#128075; Hi, I am Yaming, a Full Stack SWE &#x1F468;&#x200D;&#x1F4BB; &#128293; &#128293;
       </h1>
       <h2 style={{textAlign: "center", marginTop: '30px', marginBottom: '50px'}}>
         Professional Experiences
@@ -82,7 +89,9 @@ const App = () => {
             ),
             children: (
               <>
-                <img src={TX} alt={""} width={'200px'} draggable={"false"}/>
+                <img
+                  src={'https://upload.wikimedia.org/wikipedia/commons/archive/2/22/20220918154151%21Tencent_Logo.svg'}
+                  alt={""} width={'200px'} draggable={"false"}/>
                 <h3>Backend SWE &#128205; Beijing, China</h3>
                 <h4>Tencent News @ PCG</h4>
                 <ul style={{width: '500px'}}>
@@ -108,7 +117,146 @@ const App = () => {
           },
         ]}
       />
-      <h2 style={{textAlign: "center", marginTop: '80px', marginBottom: '50px'}}>
+      <h2 style={{textAlign: "center", marginTop: '40px', marginBottom: '30px'}}>
+        Tech Stack
+      </h2>
+      <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center"}}>
+        <img
+          draggable={false}
+          width={80}
+          src="https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '15px', backgroundColor: '#00ADD8'}}
+          draggable={false}
+          width={80}
+          src="https://raw.githubusercontent.com/grpc/grpc.io/4ad607130312760348fad636eec1bcd244f353d0/assets/icons/logo.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '15px'}}
+          draggable={false}
+          width={80}
+          src="https://upload.wikimedia.org/wikipedia/commons/1/18/OpenJDK_logo.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={100}
+          src="https://upload.wikimedia.org/wikipedia/commons/4/44/Spring_Framework_Logo_2018.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={80}
+          height={60}
+          src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={45}
+          src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={90}
+          src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={80}
+          src="https://upload.wikimedia.org/wikipedia/commons/3/39/Scala-full-color.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={100}
+          src="https://mariadb.com/wp-content/uploads/2019/11/mariadb-horizontal-blue.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={80}
+          src="https://upload.wikimedia.org/wikipedia/commons/6/64/Logo-redis.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={60}
+          height={40}
+          src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Cassandra_logo.svg"
+          alt={""}/>
+        <div style={{width: '100%'}}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={110}
+          src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Elasticsearch_logo.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={100}
+          src="https://upload.wikimedia.org/wikipedia/commons/5/53/Apache_kafka_wordtype.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={100}
+          src="https://upload.wikimedia.org/wikipedia/commons/7/71/RabbitMQ_logo.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={70}
+          src={Flink}
+          alt={""}/>
+        <img
+          style={{marginLeft: '5px'}}
+          draggable={false}
+          width={120}
+          src="https://upload.wikimedia.org/wikipedia/commons/6/67/Kubernetes_logo.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={40}
+          src="https://upload.wikimedia.org/wikipedia/commons/3/38/Prometheus_software_logo.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={40}
+          src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Grafana_logo.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={110}
+          src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Superset_logo.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={70}
+          src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px'}}
+          draggable={false}
+          width={40}
+          src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Apache_Hive_logo.svg"
+          alt={""}/>
+        <img
+          style={{marginLeft: '10px', marginTop: '-10px'}}
+          draggable={false}
+          width={80}
+          src="https://upload.wikimedia.org/wikipedia/commons/5/57/Trino-logo-w-bk.svg"
+          alt={""}/>
+      </div>
+      <h2 style={{textAlign: "center", marginTop: '30px', marginBottom: '50px'}}>
         Education
       </h2>
       <Timeline
@@ -125,7 +273,8 @@ const App = () => {
               children: (
                 <>
                   <div style={{display: "flex"}}>
-                    <img src={NEU} alt={""} width={'130px'} draggable={"false"}></img>
+                    <img src={'https://upload.wikimedia.org/wikipedia/commons/0/02/Northeastern_Wordmark.svg'} alt={""}
+                         width={'130px'} draggable={"false"}></img>
                     <h3>&#128205; Boston, MA</h3>
                   </div>
                   <h3>Master of Science in Computer Engineering</h3>
@@ -141,7 +290,9 @@ const App = () => {
               children: (
                 <>
                   <div style={{display: "flex"}}>
-                    <img style={{marginLeft: "auto"}} src={UCR} alt={""} width={'130px'} draggable={"false"}></img>
+                    <img style={{marginLeft: "auto"}}
+                         src={'https://upload.wikimedia.org/wikipedia/commons/a/aa/UC_Riverside_logo.svg'} alt={""}
+                         width={'130px'} draggable={"false"}></img>
                     <h3>&#128205; Riverside, CA</h3>
                   </div>
                   <h3>Graduate Preparation Program in Computer Science</h3>
