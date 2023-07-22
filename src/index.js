@@ -199,11 +199,10 @@ const App = () => {
               children: (
                 <>
                   <a style={{
-                    display: "block",
-                    width: '500px',
+                    // TODO align here is not perfect
+                    marginLeft: '20pc',
                     color: "black",
                     textDecoration: "underline",
-                    marginLeft: "auto"
                   }}
                      href={"https://dl.acm.org/doi/abs/10.1145/3459637.3481897"}><b>Beast: Scalable Exploratory
                     Analytics on Spatio-temporal Data</b>: ACM International Conference on Information and Knowledge
