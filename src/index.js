@@ -1,14 +1,23 @@
 import React from 'react';
-import {Avatar, Button, Timeline, Image} from 'antd';
+import {Avatar, Button, Timeline, Divider} from 'antd';
 import {createRoot} from "react-dom";
 import avatar from './avatar.jpg'
 import EA from './ealogo.svg'
+import EAArch from './eaarch.svg'
 import TArch from './tencentarch.svg'
 import XD from './xdlogo.svg'
 import Flink from './flink.svg'
 import {GithubOutlined, LinkedinOutlined} from "@ant-design/icons";
 
 const App = () => {
+  let style = {
+    fontFamily: 'Times New Roman',
+    fontSize: '18px'
+  }
+  if (window.innerWidth > 1000) {
+    style.paddingRight = '300px'
+  }
+
   return (
     <>
       <div style={{display: "flex", justifyContent: "center", marginTop: '30px'}}>
@@ -42,27 +51,32 @@ const App = () => {
                 icon={<GithubOutlined style={{fontSize: '30px'}}/>}/>
       </div>
       <h1 style={{textAlign: "center", marginTop: '30px'}}>
-        &#128075; Hi, I am Yaming, a Full Stack SWE &#x1F468;&#x200D;&#x1F4BB; &#128293; &#128293;
+        &#128075; Hi, I am Yaming, a Full Stack SWE &#x1F468;&#x200D;&#x1F4BB; &#128293;
       </h1>
-      <h2 style={{textAlign: "center", marginTop: '30px', marginBottom: '50px'}}>
+      <Divider style={{border: '1px solid'}}/>
+      <h2 style={{textAlign: "center", paddingTop: '10px'}}>
         Professional Experiences
       </h2>
       <Timeline
-        style={{}}
+        style={{
+          paddingTop: '20px',
+          backgroundColor: 'rgba(255,182,193,0.07)',
+          backgroundClip: 'padding-box'
+        }}
         mode={'left'}
         items={[
           {
             label: (
               <>
                 <p style={{marginTop: '0px'}}><b>2023-05 ~ Present</b></p>
-                {/*<img src={EAArch} alt={""} width={'75%'} draggable={"false"}></img>*/}
+                <img src={EAArch} alt={""} width={'80%'} draggable={"false"}></img>
               </>
             ),
             children: (
               <>
                 <img src={EA} alt={""} width={'200px'} draggable={"false"}/>
                 <h3>Full Stack SWE &#128205; Redwood City, CA</h3>
-                <ul style={{width: '500px'}}>
+                <ul style={style}>
                   <li>Designed and implemented the Player Lifecycle Graph, a serialization model to manage players'
                     states and unified messages in popular games such as FIFA and APEX.
                   </li>
@@ -94,7 +108,7 @@ const App = () => {
                   alt={""} width={'200px'} draggable={"false"}/>
                 <h3>Backend SWE &#128205; Beijing, China</h3>
                 <h4>Tencent News @ PCG</h4>
-                <ul style={{width: '500px'}}>
+                <ul style={style}>
                   <li>Built Tencent News Risk Management Platform
                     using <b>tRPC</b> with <b>Redis</b>, <b>Elasticsearch</b>, etc.
                   </li>
@@ -103,7 +117,7 @@ const App = () => {
                   </li>
                 </ul>
                 <h4>Tencent Healthcare @ CSIG</h4>
-                <ul style={{width: '500px'}}>
+                <ul style={style}>
                   <li>Developed Tencent Healthcare back-end micro services using <b>gRPC</b> with high-tolerance APIs,
                     shipper for logs (<b>ELK</b>), monitoring system (<b>Prometheus</b>, <b>Grafana</b>), asynchronous
                     channels to <b>Apache Kafka</b>, etc to enhance reliability of Tencent Healthcare.
@@ -117,17 +131,22 @@ const App = () => {
           },
         ]}
       />
-      <h2 style={{textAlign: "center", marginTop: '40px', marginBottom: '30px'}}>
+      <h2 style={{textAlign: "center", paddingTop: '20px'}}>
         Tech Stack
       </h2>
-      <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center"}}>
+      <div style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "center", backgroundColor: 'rgba(255,182,193,0.09)'
+      }}>
         <img
           draggable={false}
           width={80}
           src="https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg"
           alt={""}/>
         <img
-          style={{marginLeft: '15px', backgroundColor: '#00ADD8'}}
+          style={{marginLeft: '15px', backgroundColor: '#40cace'}}
           draggable={false}
           width={80}
           src="https://raw.githubusercontent.com/grpc/grpc.io/4ad607130312760348fad636eec1bcd244f353d0/assets/icons/logo.svg"
@@ -256,35 +275,73 @@ const App = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/5/57/Trino-logo-w-bk.svg"
           alt={""}/>
       </div>
-      <h2 style={{textAlign: "center", marginTop: '30px', marginBottom: '50px'}}>
+      <h2 style={{textAlign: "center", paddingTop: '30px'}}>
+        Research Project
+      </h2>
+      <div style={{textAlign: "center", backgroundColor: 'rgba(255,182,193,0.07)'}}>
+        <img
+          src={'https://bitbucket.org/bdlabucr/beast/raw/a99be5ec3d9e917bcd36e87da1b42d3eae029368/doc/images/beast-logo.svg'}
+          alt={""}
+          width={'200px'} draggable={"false"}></img>
+        <p>2019-09 ~ Present</p>
+        <h3>The Big Data Lab at UCR &#128205; Remote</h3>
+        <ul style={{
+          display: "inline-block",
+          width: '900px',
+          textAlign: 'left',
+          marginTop: '0px',
+          fontSize: '18px',
+          fontFamily: 'Times New Roman'
+        }}>
+          <li>Leveraged the power of <b>SparkSQL</b> to design and implement user-defined functions for
+            geometry calculation, enabling the provision of diverse and flexible APIs that empower developers
+            to generate and manipulate geometries with ease.
+          </li>
+          <li>Utilized the Hadoop file API to efficiently parse records from the OpenStreetMap (OSM) PBF file,
+            enabling extraction of OSM entities for subsequent processing and analysis.
+          </li>
+          <li>Extracted nodes, POIs, roads and all objects using SparkSQL and categorized different datasets
+            from all objects based on OSM tags, including parks, lakes and buildings, etc.
+          </li>
+          <li>Generated the satellite image of corresponding OSM Vector data using Beast Raptor spatial-join
+            for spatial machine learning and AI activities.
+          </li>
+        </ul>
+      </div>
+      <h2 style={{textAlign: "center", paddingTop: '30px'}}>
         Education
       </h2>
       <Timeline
-        style={{}}
+        style={{
+          paddingTop: '10px',
+          backgroundColor: 'rgba(255,182,193,0.09)',
+          backgroundClip: 'padding-box'
+        }}
         mode={'alternate'}
         items={
           [
             {
               label: (
                 <>
-                  <p style={{marginTop: '0px'}}><b>2022-09 ~ 2023-12</b></p>
+                  <p style={{marginTop: '0px'}}>2022-09 ~ 2023-12</p>
                 </>
               ),
               children: (
                 <>
                   <div style={{display: "flex"}}>
-                    <img src={'https://upload.wikimedia.org/wikipedia/commons/0/02/Northeastern_Wordmark.svg'} alt={""}
+                    <img src={'https://upload.wikimedia.org/wikipedia/commons/0/02/Northeastern_Wordmark.svg'}
+                         alt={""}
                          width={'130px'} draggable={"false"}></img>
-                    <h3>&#128205; Boston, MA</h3>
+                    <p>&#128205; Boston, MA</p>
                   </div>
-                  <h3>Master of Science in Computer Engineering</h3>
+                  <p><b>Master</b> of Science in Computer Engineering</p>
                 </>
               )
             },
             {
               label: (
                 <>
-                  <p style={{marginTop: '0px'}}><b>2019-08 ~ 2020-06</b></p>
+                  <p style={{marginTop: '0px'}}>2019-08 ~ 2020-06</p>
                 </>
               ),
               children: (
@@ -293,48 +350,52 @@ const App = () => {
                     <img style={{marginLeft: "auto"}}
                          src={'https://upload.wikimedia.org/wikipedia/commons/a/aa/UC_Riverside_logo.svg'} alt={""}
                          width={'130px'} draggable={"false"}></img>
-                    <h3>&#128205; Riverside, CA</h3>
+                    <p>&#128205; Riverside, CA</p>
                   </div>
-                  <h3>Graduate Preparation Program in Computer Science</h3>
+                  <p>Graduate Preparation Program in <b>Computer Science</b></p>
                 </>
               )
             },
             {
               label: (
                 <>
-                  <p style={{marginTop: '0px'}}><b>2016-08 ~ 2019-06</b></p>
+                  <p style={{marginTop: '0px'}}>2016-08 ~ 2019-06</p>
                 </>
               ),
               children: (
                 <>
                   <div style={{display: "flex"}}>
                     <img src={XD} alt={""} width={'100px'} draggable={"false"}></img>
-                    <h3>&#128205; Xi'an, China</h3>
+                    <p>&#128205; Xi'an, China</p>
                   </div>
-                  <h3>Bachelor of Science in Computer Science</h3>
+                  <p><b>Bachelor</b> of Science in Computer Science</p>
                 </>
               )
             },
           ]
         }
       />
-      <h2 style={{textAlign: "center", marginBottom: '50px'}}>
+      <h2 style={{textAlign: "center", paddingTop: '30px'}}>
         Publication
       </h2>
       <Timeline
-        style={{}}
+        style={{
+          paddingTop: '10px',
+          backgroundColor: 'rgba(255,182,193,0.07)',
+          backgroundClip: 'padding-box'
+        }}
         mode={'alternate'}
         items={
           [
             {
               label: (
                 <>
-                  <p style={{marginTop: '0px'}}><b>2022-11</b></p>
+                  <p style={{marginTop: '0px'}}>2022-11</p>
                 </>
               ),
               children: (
                 <>
-                  <a style={{display: "block", width: '500px', color: "black", textDecoration: "underline"}}
+                  <a style={{display: "block", width: '450px', color: "black", textDecoration: "underline"}}
                      href={"https://dl.acm.org/doi/abs/10.1145/3557915.3560954"}><b>OSMX:
                     Spark-based Geospatial Data Extractor from OpenStreetMap and Satellite Images</b>: International
                     Conference on Advances in Geographic Information Systems</a>
@@ -344,7 +405,7 @@ const App = () => {
             {
               label: (
                 <>
-                  <p style={{marginTop: '0px'}}><b>2021-10</b></p>
+                  <p style={{marginTop: '0px'}}>2021-10</p>
                 </>
               ),
               children: (
@@ -364,12 +425,12 @@ const App = () => {
             {
               label: (
                 <>
-                  <p style={{marginTop: '0px'}}><b>2020-06</b></p>
+                  <p style={{marginTop: '0px'}}>2020-06</p>
                 </>
               ),
               children: (
                 <>
-                  <a style={{display: "block", width: '500px', color: "black", textDecoration: "underline"}}
+                  <a style={{display: "block", width: '450px', color: "black", textDecoration: "underline"}}
                      href={"https://dl.acm.org/doi/10.1145/3403896.3403969"}><b>Evaluating Computational Geometry
                     Libraries for Big Spatial Data Exploration</b>: International ACM SIGMOD Workshop on Managing and
                     Mining Enriched Geo-Spatial Data</a>
@@ -380,7 +441,8 @@ const App = () => {
         }
       />
     </>
-  );
+  )
+    ;
 };
 
 createRoot(document.getElementById('root')).render(<App/>);
