@@ -69,7 +69,7 @@ const App = () => {
             label: (
               <>
                 <p style={{marginTop: '0px'}}><b>2023-05 ~ Present</b></p>
-                <img src={EAArch} alt={""} width={'80%'} draggable={"false"}></img>
+                {/*<img src={EAArch} alt={""} width={'80%'} draggable={"false"}></img>*/}
               </>
             ),
             children: (
