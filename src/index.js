@@ -1,21 +1,13 @@
 import React from 'react';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import {createHashRouter, RouterProvider} from 'react-router-dom';
 import {createRoot} from "react-dom";
 import {Page} from "./page";
-import {About} from "./about";
+import {CV} from "./about";
 
+const router = createHashRouter([{
+  path: "/", element: <Page/>,
+}, {
+  path: "/cv", element: <CV/>,
+},]);
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Page/>,
-    },
-    {
-        path: "/about",
-        element: <About/>,
-    },
-]);
-
-createRoot(document.getElementById("root")).render(
-    <RouterProvider router={router}/>
-);
+createRoot(document.getElementById("root")).render(<RouterProvider router={router}/>);

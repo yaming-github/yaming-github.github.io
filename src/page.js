@@ -30,15 +30,15 @@ export const Page = () => {
                   xxl: 100,
                 }}
                 draggable={"false"}/>
-          <Button style={{
-              border: "none",
-              marginLeft: '20px',
-              marginTop: 'auto',
-              marginBottom: "auto",
-          }}
-                  href={"/about"}
-                  size={"large"}
-                  icon={<FilePdfOutlined style={{fontSize: '30px'}}/>}/>
+        <Button style={{
+          border: "none",
+          marginLeft: '20px',
+          marginTop: 'auto',
+          marginBottom: "auto",
+        }}
+                href={"/#/cv"}
+                size={"large"}
+                icon={<FilePdfOutlined style={{fontSize: '30px'}}/>}/>
         <Button style={{
           border: "none",
           marginLeft: '20px',
@@ -85,13 +85,19 @@ export const Page = () => {
                 <img src={EA} alt={""} width={'200px'} draggable={"false"}/>
                 <h3>Full Stack SWE &#128205; Redwood City, CA</h3>
                 <ul style={style}>
-                  <li>Designed the <b>Java-based OOP</b> model for Player Lifecycle Graph, a serialization model to manage players' states and unified messages, resulting in a <b>30% cost reduction</b> by eliminating the need for customizing <b>Braze</b>.
+                  <li>Designed the <b>Java-based OOP</b> model for Player Lifecycle Graph, a serialization model to
+                    manage players' states and unified messages, resulting in a <b>30% cost reduction</b> by eliminating
+                    the need for customizing <b>Braze</b>.
                   </li>
-                  <li>Developed a <b>Flink</b> topology for <b>Kafka</b> streaming PIN events execution, enabling efficient retrieval of lifecycles from <b>Redis</b>, reading player profiles from <b>ScyllaDB</b>, and executing the corresponding lifecycles.
+                  <li>Developed a <b>Flink</b> topology for <b>Kafka</b> streaming PIN events execution, enabling
+                    efficient retrieval of lifecycles from <b>Redis</b>, reading player profiles from <b>ScyllaDB</b>,
+                    and executing the corresponding lifecycles.
                   </li>
-                  <li>Leveraged EADP's <b>Data Query Language (DQL)</b> to extract data from unstructured <b>JSON</b> events, evaluate boolean conditions, and execute action scripts.
+                  <li>Leveraged EADP's <b>Data Query Language (DQL)</b> to extract data from
+                    unstructured <b>JSON</b> events, evaluate boolean conditions, and execute action scripts.
                   </li>
-                  <li>Built a web application with <b>React</b> and implemented APIs with <b>Spring Boot</b>, empowering campaign managers to draw lifecycle flowcharts and retrieve players' current states in games.
+                  <li>Built a web application with <b>React</b> and implemented APIs with <b>Spring Boot</b>, empowering
+                    campaign managers to draw lifecycle flowcharts and retrieve players' current states in games.
                   </li>
                 </ul>
               </>
