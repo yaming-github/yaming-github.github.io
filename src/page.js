@@ -76,7 +76,7 @@ export const Page = () => {
           {
             label: (
               <>
-                <p style={{marginTop: '0px'}}><b>2023-05 ~ Present</b></p>
+                <p style={{marginTop: '0px'}}><b>2023-05 ~ 2023-08</b></p>
                 <img src={EAArch} alt={""} width={'80%'} draggable={"false"}></img>
               </>
             ),
@@ -121,18 +121,56 @@ export const Page = () => {
                   <li>Built Tencent News Risk Management Platform
                     using <b>tRPC</b> with <b>Redis</b>, <b>Elasticsearch</b>, etc.
                   </li>
-                  <li>Analyzed Tencent News App traffic data using <b>Apache Spark</b>, <b>Apache
-                    Hive</b> and <b>Presto</b> to do the OLAP for the team.
+                  <li>Analyzed Tencent News App traffic data using <b>Spark</b>, <b>Hive</b> and <b>Presto</b> to do the
+                    OLAP for the team.
                   </li>
                 </ul>
                 <h4>Tencent Healthcare @ CSIG</h4>
                 <ul style={style}>
-                  <li>Developed Tencent Healthcare back-end micro services using <b>gRPC</b> with high-tolerance APIs,
-                    shipper for logs (<b>ELK</b>), monitoring system (<b>Prometheus</b>, <b>Grafana</b>), asynchronous
-                    channels to <b>Apache Kafka</b>, etc to enhance reliability of Tencent Healthcare.
+                  <li>Developed <b>Microservices</b> on <b>Go</b> using <b>gRPC</b> with logs on <b>ELK</b>, monitoring
+                    system on <b>Prometheus</b>, <b>Grafana</b>, asynchronous pipelines to <b>Kafka</b>, etc, achieving
+                    a <b>25%
+                      improvement</b> in interface response time and a <b>50% reduction</b> in production debug time.
                   </li>
-                  <li>Deployed micro services on Tencent Public Cloud via Docker containers
-                    and <b>Kubernetes</b> automated CI/CD construction to improve service scalability.
+                  <li>Established automated <b>CI/CD</b> pipelines that enhanced service security by seamlessly
+                    integrating <b>Unit Tests</b> during CI, while also enabling efficient rollback on <b>Tencent Cloud
+                      Kubernetes</b>.
+                  </li>
+                </ul>
+              </>
+            ),
+          },
+          {
+            label: (
+              <>
+                <p style={{marginTop: '0px'}}><b>2019-08 ~ 2020-07</b></p>
+                <a href='https://bitbucket.org/bdlabucr/beast'>
+                  <img
+                    src='https://bitbucket.org/bdlabucr/beast/raw/a99be5ec3d9e917bcd36e87da1b42d3eae029368/doc/images/beast-logo.svg'
+                    alt={""} width={'65%'} draggable={"false"}>
+                  </img>
+                </a>
+              </>
+            ),
+            children: (
+              <>
+                <img
+                  src={'https://upload.wikimedia.org/wikipedia/commons/a/aa/UC_Riverside_logo.svg'}
+                  alt={""} width={'200px'} draggable={"false"}/>
+                <h3>Research Assistant & Scala Developer &#128205; Riverside, CA</h3>
+                <ul style={style}>
+                  <li>Leveraged the power of <b>Scala</b> and <b>Spark</b> to design user-defined functions for geometry
+                    calculation, enabling the provision of diverse and flexible APIs that empower developers to generate
+                    and manipulate geometries with ease.
+                  </li>
+                  <li>Utilized the <b>Hadoop</b> file API to efficiently parse records from the <b>OpenStreetMap</b> PBF
+                    file, enabling extraction of OSM entities for subsequent <b>Big Data Processing Pipelines</b>.
+                  </li>
+                  <li>Extracted nodes, POIs, roads and all objects in pipelines and categorized different datasets from
+                    all objects based on OSM tags, including parks, lakes and buildings, etc.
+                  </li>
+                  <li>Generated the satellite image of corresponding OSM Vector data using <b>Beast
+                    Raptor</b> spatial-join for spatial machine learning and AI activities.
                   </li>
                 </ul>
               </>
@@ -283,39 +321,6 @@ export const Page = () => {
           width={80}
           src="https://upload.wikimedia.org/wikipedia/commons/5/57/Trino-logo-w-bk.svg"
           alt={""}/>
-      </div>
-      <h2 style={{textAlign: "center", paddingTop: '30px'}}>
-        Research Project
-      </h2>
-      <div style={{textAlign: "center", backgroundColor: 'rgba(255,182,193,0.07)'}}>
-        <img
-          src={'https://bitbucket.org/bdlabucr/beast/raw/a99be5ec3d9e917bcd36e87da1b42d3eae029368/doc/images/beast-logo.svg'}
-          alt={""}
-          width={'200px'} draggable={"false"}></img>
-        <p>2019-09 ~ Present</p>
-        <h3>The Big Data Lab at UCR &#128205; Remote</h3>
-        <ul style={{
-          display: "inline-block",
-          width: '900px',
-          textAlign: 'left',
-          marginTop: '0px',
-          fontSize: '18px',
-          fontFamily: 'Times New Roman'
-        }}>
-          <li>Leveraged the power of <b>SparkSQL</b> to design and implement user-defined functions for
-            geometry calculation, enabling the provision of diverse and flexible APIs that empower developers
-            to generate and manipulate geometries with ease.
-          </li>
-          <li>Utilized the Hadoop file API to efficiently parse records from the OpenStreetMap (OSM) PBF file,
-            enabling extraction of OSM entities for subsequent processing and analysis.
-          </li>
-          <li>Extracted nodes, POIs, roads and all objects using SparkSQL and categorized different datasets
-            from all objects based on OSM tags, including parks, lakes and buildings, etc.
-          </li>
-          <li>Generated the satellite image of corresponding OSM Vector data using Beast Raptor spatial-join
-            for spatial machine learning and AI activities.
-          </li>
-        </ul>
       </div>
       <h2 style={{textAlign: "center", paddingTop: '30px'}}>
         Education
