@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/static/js/main.7c69c4c8.js",
+    "static/media/eaarch.svg": "/static/media/eaarch.bd8054cff8282e2e37090c3ae8c305dc.svg",
+    "static/media/avatar.jpg": "/static/media/avatar.3cad756306311aab5662.jpg",
+    "static/media/cv.pdf": "/static/media/cv.52778c10219549cf889d.pdf",
+    "static/media/tencentarch.svg": "/static/media/tencentarch.51198d472c01e2fa2df6e907954d7aad.svg",
+    "static/media/xdlogo.svg": "/static/media/xdlogo.5449ea17046927c8815d0f44d732080b.svg",
+    "index.html": "/index.html",
+    "main.7c69c4c8.js.map": "/static/js/main.7c69c4c8.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.7c69c4c8.js"
+  ]
+}
