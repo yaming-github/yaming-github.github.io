@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets'
+import { type CollectionEntry } from 'astro:content'
+import DateRange from './DateRange.astro'
+
+interface Props {
+  entry: CollectionEntry<'education'>
+}
+
+const { entry } = Astro.props
+const { school, logo, logoHeight, degree, location, start, end } = entry.data
+---
+
+<article class="entry">
+  <div class="entry-dates">
+    <DateRange start={start} end={end} />
+  </div>
+  <div class="entry-body">
+    <div class="entry-header">
+      <Image
+        src={logo}
+        alt={school}
+        class="entry-logo"
+        style={`height: ${logoHeight}px;`}
+      />
+      <div class="entry-title-row">
+        <span class="entry-title">{degree}</span>
+        <span class="entry-location">📍 {location}</span>
+      </div>
+    </div>
+  </div>
+</article>

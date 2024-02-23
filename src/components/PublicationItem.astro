@@ -1,0 +1,18 @@
+---
+import { type CollectionEntry } from 'astro:content'
+
+interface Props {
+  entry: CollectionEntry<'publications'>
+}
+
+const { entry } = Astro.props
+const { title, venue, url, date } = entry.data
+---
+
+<article class="publication">
+  <div class="publication-date">{date}</div>
+  <div>
+    <a href={url} target="_blank" rel="noopener">{title}</a>
+    <span class="publication-venue">{venue}</span>
+  </div>
+</article>

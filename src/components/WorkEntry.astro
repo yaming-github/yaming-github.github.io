@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets'
+import { render, type CollectionEntry } from 'astro:content'
+import DateRange from './DateRange.astro'
+
+interface Props {
+  entry: CollectionEntry<'work'>
+}
+
+const { entry } = Astro.props
+const { Content } = await render(entry)
+const { company, logo, title, location, start, end, displayDate, architectureImage } = entry.data
+---
+
+<article class="entry">
+  <div class="entry-dates">
+    <DateRange start={start} end={end} override={displayDate} />
+  </div>
+  <div class="entry-body">
+    <div class="entry-header">
+      <Image src={logo} alt={company} class="entry-logo" />
+      <div class="entry-title-row">
+        <span class="entry-title">{title}</span>
+        <span class="entry-location">📍 {location}</span>
+      </div>
+    </div>
+    <div class="entry-content">
+      <Content />
+      {
+        architectureImage && (
+          <figure class="architecture">
+            <Image
+              src={architectureImage}
+              alt={`${company} architecture`}
+              class="architecture-image"
+            />
+          </figure>
+        )
+      }
+    </div>
+  </div>
+</article>

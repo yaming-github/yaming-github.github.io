@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content'
+import Base from '../layouts/Base.astro'
+import Header from '../components/Header.astro'
+import WorkEntry from '../components/WorkEntry.astro'
+import EducationEntry from '../components/EducationEntry.astro'
+import PublicationItem from '../components/PublicationItem.astro'
+
+const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order)
+const education = (await getCollection('education')).sort((a, b) => a.data.order - b.data.order)
+const publications = (await getCollection('publications')).sort((a, b) => a.data.order - b.data.order)
+---
+
+<Base title="Yaming Zhang">
+  <Header />
+
+  <section class="section">
+    <h2 class="section-title">Work</h2>
+    {work.map((entry) => <WorkEntry entry={entry} />)}
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Education</h2>
+    {education.map((entry) => <EducationEntry entry={entry} />)}
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Publications</h2>
+    {publications.map((entry) => <PublicationItem entry={entry} />)}
+  </section>
+</Base>
