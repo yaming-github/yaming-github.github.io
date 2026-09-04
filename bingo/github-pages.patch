@@ -1,0 +1,15 @@
+--- a/.github/workflows/deploy.yml
++++ b/.github/workflows/deploy.yml
+@@ -24,6 +24,12 @@
+       - name: Build
+         run: npm run build
+ 
++      - name: Add a very engaged picnic
++        run: |
++          mkdir -p dist/a-very-engaged-picnic
++          cp bingo/index.html bingo/app.js bingo/styles.css bingo/config.js dist/a-very-engaged-picnic/
++          cp -R bingo/assets dist/a-very-engaged-picnic/assets
++
+       - name: Upload artifact
+         uses: actions/upload-pages-artifact@v3
+         with:

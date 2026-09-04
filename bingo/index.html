@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#293320" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta
+      name="description"
+      content="A warm, wedding-themed multiplayer bingo game."
+    />
+    <title>Simple Bingo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&amp;family=Corinthia:wght@400;700&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css?v=75" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section id="game-card" class="game-card" aria-labelledby="page-title">
+        <div class="game-actions">
+          <button id="player-logout-button" class="rules-trigger" type="button" hidden>
+            Log out
+          </button>
+          <button id="rules-button" class="rules-trigger" type="button" hidden>Rules</button>
+        </div>
+        <header class="game-header">
+          <p id="story-dedication" class="story-dedication">
+            <span id="story-player-name">Friend</span>, thanks for being a part of our
+          </p>
+          <h1 id="page-title" class="story-title" aria-label="Story">
+            <span>S</span><span>T</span><span>O</span><span>R</span><span>Y</span>
+          </h1>
+        </header>
+
+        <div id="player-game">
+          <div id="bingo-grid" class="bingo-grid" aria-label="Bingo board"></div>
+
+          <p id="progress-message" class="message centered" aria-live="polite">
+            Claim a player name to begin.
+          </p>
+        </div>
+
+        <section id="public-leaderboard-panel" class="team-board" aria-label="Team scores" hidden>
+          <div id="team-leaderboard" class="team-leaderboard" aria-live="polite"></div>
+        </section>
+      </section>
+
+      <section id="admin-panel" class="leaderboard-card" aria-labelledby="admin-title" hidden>
+        <div class="section-heading">
+          <h2 id="admin-title">Host dashboard</h2>
+          <div class="admin-heading-actions">
+            <button id="admin-logout-button" class="text-button" type="button">Log out</button>
+            <button id="admin-refresh-button" class="text-button" type="button">Refresh</button>
+          </div>
+        </div>
+        <p class="status-help">Select a player to inspect their board and submitted answers.</p>
+        <div id="admin-winner-banner" class="winner-banner" hidden aria-live="assertive"></div>
+        <div class="admin-dashboard">
+          <section class="admin-player-panel" aria-labelledby="admin-players-title">
+            <h3 id="admin-players-title">Players</h3>
+            <ul id="admin-status" class="leaderboard admin-player-list">
+              <li class="empty-state">No players yet.</li>
+            </ul>
+          </section>
+
+          <section id="admin-player-detail" class="admin-player-detail" hidden>
+            <div class="admin-detail-heading">
+              <div>
+                <p class="eyebrow">PLAYER DETAILS</p>
+                <h3 id="admin-player-name"></h3>
+              </div>
+              <span id="admin-player-summary" class="admin-player-summary"></span>
+            </div>
+            <div id="admin-player-board" class="admin-board" aria-label="Player bingo layout"></div>
+            <h4>Submitted answers</h4>
+            <div id="admin-player-answers" class="admin-answer-list"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <aside
+      id="game-notification"
+      class="game-notification"
+      role="alert"
+      aria-live="assertive"
+      hidden
+    >
+      <span class="notification-sparkle" aria-hidden="true">✦</span>
+      <div class="notification-copy">
+        <strong id="notification-title">Bingo!</strong>
+        <p id="notification-message"></p>
+      </div>
+      <button id="close-notification" type="button" aria-label="Dismiss notification">×</button>
+    </aside>
+
+    <dialog id="name-entry-dialog" class="question-dialog name-entry-dialog">
+      <form id="player-form">
+        <p class="eyebrow">WELCOME TO OUR PICNIC</p>
+        <div class="welcome-intro">
+          <p>
+            Engage in some meaningful conversations and swap stories to see what brought you all
+            here today.
+          </p>
+          <p>
+            In this twist on Bingo, each square holds a memory we’ve shared with one of you! Figure
+            out who each clue belongs to and fill in their first name. (p.s. first to bingo gets a
+            prize!)
+          </p>
+        </div>
+        <input
+          id="username"
+          name="username"
+          type="text"
+          minlength="2"
+          maxlength="10"
+          autocomplete="nickname"
+          aria-label="Player name"
+          placeholder="Enter your name"
+          required
+        />
+        <p id="player-message" class="message" aria-live="polite"></p>
+        <div class="dialog-actions">
+          <button id="claim-button" type="submit">Continue</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="question-dialog" class="question-dialog">
+      <form id="answer-form" method="dialog">
+        <h2 id="question-text">Question</h2>
+        <label for="answer">Your answer</label>
+        <input
+          id="answer"
+          name="answer"
+          type="text"
+          autocomplete="off"
+          autocapitalize="none"
+          enterkeyhint="done"
+          required
+        />
+        <p id="answer-message" class="message" aria-live="polite"></p>
+        <div class="dialog-actions">
+          <button id="cancel-answer" class="secondary-button" type="button">Cancel</button>
+          <button id="submit-answer" type="submit">Submit</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="team-dialog" class="question-dialog team-dialog">
+      <form method="dialog">
+        <p class="eyebrow">THE FREE SPOT</p>
+        <h2>Choose your team</h2>
+        <p class="team-copy">Who are you cheering for?</p>
+        <div class="team-options">
+          <button id="choose-yaming" class="team-option" type="button">
+            <span class="team-option-icon black-tie-option" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path class="black-tie" d="m25 7 7 7 7-7 5 10-8 10 7 28-11 7-11-7 7-28-8-10Z" />
+                <path class="tie-highlight" d="m32 16 4 4-4 5-4-5Z" />
+              </svg>
+            </span>
+            <strong>Yaming</strong>
+            <small>Team Groom</small>
+          </button>
+          <button id="choose-win-ying" class="team-option" type="button">
+            <span class="team-option-icon" aria-hidden="true">👰</span>
+            <strong>Win-Ying</strong>
+            <small>Team Bride</small>
+          </button>
+        </div>
+        <p id="team-message" class="message centered" aria-live="polite"></p>
+        <button id="cancel-team" class="secondary-button team-cancel" type="button">Not yet</button>
+      </form>
+    </dialog>
+
+    <dialog id="rules-dialog" class="question-dialog rules-dialog">
+      <div class="rules-card">
+        <p class="eyebrow">BEFORE YOU BEGIN</p>
+        <h2>How to play</h2>
+        <ol class="rules-list">
+          <li>You must spell names correctly. Answers are not case-sensitive.</li>
+          <li>You have 2 tries per prompt.</li>
+          <li>
+            Only the hosts will see whether your answer is correct until you get a bingo.
+            <small class="rule-hint">Hint: a question might have 2 correct answers.</small>
+          </li>
+        </ol>
+        <button id="close-rules" type="button">Let’s get engaged!</button>
+      </div>
+    </dialog>
+
+    <script type="module" src="app.js?v=67"></script>
+  </body>
+</html>
